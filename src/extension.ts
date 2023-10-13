@@ -79,7 +79,7 @@ const runFixImportTask = async (rawEditor: vscode.TextEditor) => {
     const editor = new VSCodeEditorAccess(rawEditor);
     try {
         const count = await fixImports(editor, packageInfo, path.sep);
-        vscode.commands.executeCommand('editor.action.organizeImports');
+        vscode.commands.executeCommand('dartimportsorter.sortImports');
         showInfoMessage(
             (count === 0 ? 'No lines changed.' : `${count} imports fixed.`) +
             ' All imports sorted.',
@@ -167,13 +167,13 @@ export async function activate(context: vscode.ExtensionContext): Promise<void> 
         }
 
         let totalCount = 0;
-        for await  (const uri of filesUris) {
+        for await (const uri of filesUris) {
             const document = await vscode.workspace.openTextDocument(uri);
             const rawEditor = await vscode.window.showTextDocument(document);
             const editor = new VSCodeEditorAccess(rawEditor);
             try {
                 const count = await fixImports(editor, packageInfo, path.sep);
-                vscode.commands.executeCommand('editor.action.organizeImports');
+                vscode.commands.executeCommand('dartimportsorter.sortImports');
                 totalCount += count;
             } catch (ex) {
                 if (ex instanceof Error) {

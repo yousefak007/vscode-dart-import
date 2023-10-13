@@ -1,10 +1,10 @@
 {
-    "name": "dart-import",
-    "displayName": "dart-import",
-    "description": "Fix Dart/Flutter's imports",
-    "version": "0.3.1",
-    "publisher": "luanpotter",
-    "repository": "https://github.com/luanpotter/vscode-dart-import",
+    "name": "ramz-dart-import",
+    "displayName": "ramz-dart-import",
+    "description": "Rmaz Fix Dart/Flutter's imports",
+    "version": "1.0.0",
+    "publisher": "Yousef",
+    "repository": "https://google.com",
     "engines": {
         "vscode": "^1.45.1"
     },
